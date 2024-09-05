@@ -35,9 +35,19 @@ function isInGermany(place) {
     return usersInGermany;
 }
 
+// Question 3
 
+function isMasterDegree(degree) {
+    const userlist = [];
+    for (const key in users) {
+        if (users[key].qualification === degree) {
+            userlist.push(key);
+        }
+    }
+    return userlist;
+}
 
 module.exports = {
    
-    isGame, isInGermany
+    isGame, isInGermany, isMasterDegree
 };
