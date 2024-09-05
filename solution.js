@@ -47,7 +47,35 @@ function isMasterDegree(degree) {
     return userlist;
 }
 
+// Question 4
+
+function programmingLanguageGroup() {
+    let languageGroups = {
+        'golang': [],
+        'javascriptDeveloper': [],
+        'python': []
+    };
+
+    const golangRegex = /\bGolang\b/i;
+    const javascriptRegex = /\bjavascript\b/i;
+    const pythonRegex = /Python\s*Developer/i;
+
+    for (const key in users) {
+        let designation = users[key].desgination;
+
+        if (golangRegex.test(designation)) {
+            languageGroups['golang'].push(key);
+        } else if (javascriptRegex.test(designation)) {
+            languageGroups['javascriptDeveloper'].push(key);
+        } else if (pythonRegex.test(designation)) {
+            languageGroups['python'].push(key);
+        }
+    }
+
+    return languageGroups;
+}
+
 module.exports = {
    
-    isGame, isInGermany, isMasterDegree
+    isGame, isInGermany, isMasterDegree, programmingLanguageGroup
 };
